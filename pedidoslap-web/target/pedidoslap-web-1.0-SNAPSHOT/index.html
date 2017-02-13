@@ -1,37 +1,41 @@
+
 <!DOCTYPE html>
-<html>
-    <style>
-        table, th , td {
-            border: 1px solid grey;
-            border-collapse: collapse;
-            padding: 5px;
-        }
-        table tr:nth-child(odd) {
-            background-color: #f1f1f1;
-        }
-        table tr:nth-child(even) {
-            background-color: #ffffff;
-        }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <body>
+<!-- Declares the root element that allows behaviour to be modified through Angular custom HTML tags. -->
+<html ng-app="pedidos">
+<head>
+    <title></title>
+    <script src="lib/angular.min.js"></script>
+    <!-- <script src="lib/jquery-1.9.1.js"></script> -->
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <!-- <script src="lib/ui-bootstrap-0.10.0.min.js"></script> -->
+    <script src="lib/bootstrap.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    
+    <!-- <script src="lib/ng-grid.min.js"></script> -->
+    <script src="lib/ng-grid.min.js"></script>
+    
 
-        <div ng-app="">
-            <p>SOFTWARE DE PEDIDOSLAP</p>
-            <p>Descripcion: <input type="text" ng-model="name"></p>
-            <p ng-bind="name"></p>
-            <button ng-click="count = count + 1">Agregar Pedido</button>
+    <script src="script/pedidos.js"></script>
 
-            <p>{{ count}}</p>
-        </div>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/ng-grid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
 
-        <div ng-app="myApp" ng-controller="customersCtrl"> 
-            <table>
-                <tr ng-repeat="x in names">
-                    <td>{{ x.Name}}</td>
-                    <td>{{ x.Country}}</td>
-                </tr>
-            </table>
-        </div>
-    </body>
+<body>
+
+<br>
+
+<div class="grid">
+    <!-- Specify a JavaScript controller script that binds Javascript variables to the HTML.-->
+    <div ng-controller="pedidosList">
+        <!-- Binds the grid component to be displayed. -->
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+       
+        <!--  Bind the pagination component to be displayed. -->
+    
+    </div>
+</div>
+
+</body>
 </html>
